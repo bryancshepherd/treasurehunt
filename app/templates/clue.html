@@ -1,0 +1,40 @@
+<title>Clue</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container">
+<h2>Clue</h2>
+<form action="" method="post" role="form">
+    {{ form.csrf }}
+<div class="form-group">
+      <label for="question">{{ question }}:</label>
+<input type="text" class="form-control" id="question" name="question" placeholder="You can do it!"></div>
+<button type="submit" class="btn btn-success">Submit</button>
+</form>
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+        {% for category, message in messages %}
+
+            {% if category == "Correct": %}
+            <div class="alert alert-info">
+                        <strong>Success! </strong> {{ message }}</div>
+            {% endif %}
+
+            {% if category == "Error": %}
+            <div class="alert alert-warning">{{ message }}</div>
+            {% endif %}
+
+        {% endfor %}
+
+    {% endif %}
+{% endwith %}
+
+</div>
