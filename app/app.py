@@ -42,7 +42,6 @@ def clue():
         print(given_answer)
 
         if answer == given_answer:
-            # Save the comment here.
             flash(clue, 'Correct')
 
         else:
