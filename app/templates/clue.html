@@ -1,4 +1,4 @@
-<title>Clue</title>
+<title>Get a Clue!</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -10,9 +10,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="container">
-<h2>Clue</h2>
 <form action="" method="post" role="form">
     {{ form.csrf }}
+    <br>
+    <br>
 <div class="form-group">
       <label for="question">{{ question }}:</label>
 <input type="text" class="form-control" id="question" name="question" placeholder="You can do it!"></div>
@@ -25,7 +26,7 @@
 
             {% if category == "Correct": %}
             <div class="alert alert-info">
-                        <strong>Success! </strong> {{ message }}</div>
+                        <strong>Correct! </strong> {{ message }}</div>
             {% endif %}
 
             {% if category == "Error": %}
